@@ -8,38 +8,6 @@
 <body>
     <ul id="panjere"></ul>
 </body>
-<script>
-        function showPanjere(URL) {
-
-        var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            var myArr = xmlhttp.response.split("\n");
-            showRandomLinks(myArr);
-          }
-        };
-        xmlhttp.open("GET", URL, true);
-        xmlhttp.setRequestHeader('Accept', 'application/text');
-        xmlhttp.send();
-
-        function showRandomLinks(links) {
-            var out = "";
-            for(var i = 0; i < links.length; i++) {
-                console.log(links[i])
-                var url = links[i].split("%")[0];
-                var title = links[i].split("%")[1] || "";
-                out += '<li> <a href="' + url + '" target="_blank" style="target-new: tab;" >' +
-                    title + '</a></li>';
-            }
-
-            document.getElementById("panjere").style.direction = "rtl";
-            document.getElementById("panjere").style.listStyleType = "none";
-            document.getElementById("panjere").innerHTML = out;
-            var panjere = document.getElementById("panjere")
-            console.log(panjere)
-        }
-    }
-    showPanjere("https://raw.githubusercontent.com/sehraramiz/links/main/links.txt")
-</script>
+<script src="/panjere.js"></script>
+<script>showPanjere("https://raw.githubusercontent.com/sehraramiz/links/main/links.txt")</script>
 </html>
