@@ -26,8 +26,11 @@
         function showRandomLinks(links) {
             var out = "";
             for(var i = 0; i < links.length; i++) {
-                out += '<li> <a href="' + links[i] + '" target="_blank" style="target-new: tab;" >' +
-                links[i] + '</a></li>';
+                console.log(links[i])
+                var url = links[i].split("%")[0];
+                var title = links[i].split("%")[1] || "";
+                out += '<li> <a href="' + url + '" target="_blank" style="target-new: tab;" >' +
+                    title + '</a></li>';
             }
 
             document.getElementById("panjere").style.direction = "rtl";
