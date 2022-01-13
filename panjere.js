@@ -17,7 +17,6 @@ function showPanjere(URL) {
     xmlhttp.setRequestHeader('Accept', 'application/text');
     xmlhttp.send();
 
-
     function showRandomLinks(links, count) {
         var out = "";
         links = shuffleArray(links).slice(0, count);
