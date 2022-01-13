@@ -23,8 +23,8 @@ function showPanjere(URL) {
         links = shuffleArray(links).slice(0, count);
         for(var i = 0; i < links.length; i++) {
             console.log(links[i])
-            var url = links[i].split("%")[0];
-            var title = links[i].split("%")[1] || "";
+            var url = links[i].split("@@@")[0];
+            var title = links[i].split("@@@")[1] || "";
             out += '<li> <a href="' + url + '" target="_blank" style="target-new: tab;" >' +
                 title + '</a></li>';
         }
