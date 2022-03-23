@@ -3,14 +3,14 @@ function shuffleArray(arr) {
     return arr
 }
 
-function showPanjere(URL) {
+function showPanjere(URL, count=3) {
 
     var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var myArr = xmlhttp.response.split("\n");
-          showRandomLinks(myArr, 3);
+        showRandomLinks(myArr, count);
       }
     };
     xmlhttp.open("GET", URL, true);
@@ -32,7 +32,6 @@ function showPanjere(URL) {
         document.getElementById("panjere").style.listStyleType = "none";
         document.getElementById("panjere").innerHTML = out;
         var panjere = document.getElementById("panjere")
-        console.log(panjere)
     }
 }
 
